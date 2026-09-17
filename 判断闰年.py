@@ -8,5 +8,3 @@ else:
         print("N")
     else:
         print("Y")
-
-    
