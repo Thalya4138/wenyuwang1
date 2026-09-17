@@ -40,6 +40,7 @@ coverage/
 __pycache__/
 *.py[cod]
 .venv/
+.ipynb_checkpoints/
 venv/
 .pytest_cache/
 .mypy_cache/
