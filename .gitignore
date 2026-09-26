@@ -57,3 +57,8 @@ target/
 .parcel-cache/
 *.tsbuildinfo
 
+# 嵌套 git worktree：工作区里出现嵌套仓库时，git add 不会递归进去，
+# 只会记一条 gitlink。没有 .gitmodules 就是「幽灵子模块」——
+# GitHub 上渲染成死链，git status 会因为找不到它的 gitdir 而报错。
+*.worktrees/
+
