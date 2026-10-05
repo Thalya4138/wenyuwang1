@@ -11,6 +11,7 @@
 | 目录 | 内容 | 规模 |
 |---|---|---|
 | [`cs_lecture/`](cs_lecture/) | 整合讲义（56 章）+ 5 个配套实验 | 19 个文件 |
+| [`note_maintained_by_myself/`](note_maintained_by_myself/) | Python 知识点笔记（按覆盖表写、可验收） | 16 个文件 |
 | [`Practice/`](Practice/) | Python / OJ 练习程序 | 21 个文件 |
 | [`Resources from class/`](<Resources from class/>) | 课堂讲义原件（Jupyter notebook 与 `.py`） | 12 个文件 |
 
@@ -48,6 +49,25 @@ python cs_lecture/labs/lab05_retrieval_system.py
 ```
 
 只依赖 Python 标准库（`lab03` 除外，需要 `numpy`，见 [`cs_lecture/requirements.txt`](cs_lecture/requirements.txt)）。讲义中的 PyTorch 示范未在本机实跑，原文已明确标注。
+
+## `note_maintained_by_myself/` — Python 知识点笔记
+
+一套**按覆盖表写、可验收**的 Python 知识点汇总，从环境配置讲到并发与网络，外加一份标准库索引。入口见 [`note_maintained_by_myself/README.md`](note_maintained_by_myself/README.md)。
+
+- **覆盖表** — [`00_知识点总览.md`](note_maintained_by_myself/00_知识点总览.md)：80 个条目，每条标注对应官方/runoob 章节、计划文件、展开程度与状态
+- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
+- **正文 13 章** — `01_入门与环境.md` ～ `12_并发与网络.md`，加 `99_标准库索引.md`
+- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
+
+三条边界写在这里，是为了不让人误以为它什么都包：
+
+| 层 | 做法 |
+|---|---|
+| 核心语法 | 逐条展开 |
+| 常用标准库 | **索引级完整**（全列出 + 一句话 + 官方链接），不展开教程 |
+| 生态 / 进阶（框架、数据科学、爬虫、GUI、部署） | **明确不展开**，并写明原因 |
+
+不逐字复制任何教程正文：知识点与结构可以照着讲，正文与示例都是自己写的。
 
 ## `Practice/` — 练习程序
 
