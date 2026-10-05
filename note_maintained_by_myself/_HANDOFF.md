@@ -177,6 +177,43 @@ C:\Users\Wang\Desktop\git\note_maintained_by_myself\00_知识点总览.md
 
 ### 环境陷阱（DSH 沙箱）
 
+#### ⚠️ `git push` 默认会失败——用原生 OpenSSH 解决（已固化）
+
+原文件写「GitHub 走 SSH 能通」，**但在这台机器的 DSH 沙箱里第一次 push 会失败**：
+
+```
+0 [main] ssh (38740) C:\Program Files\Git\usr\bin\ssh.exe:
+  *** fatal error - couldn't create signal pipe, Win32 error 5
+fatal: Could not read from remote repository.
+```
+
+**这不是网络问题，是沙箱限制**：Git 自带的 `usr\bin\ssh.exe` 需要创建命名管道，而沙箱禁止。
+（同一个原因还导致：`bash -lc` 起不来、`multiprocessing` 的 `Pool`/`Pipe` 报 `WinError 5`。）
+
+**解法**：改用 Windows 原生 OpenSSH（`C:\Windows\System32\OpenSSH\ssh.exe`），它不需要命名管道：
+
+```powershell
+# 验证认证（exit=1 是正常的，GitHub 不提供 shell）
+& "C:\Windows\System32\OpenSSH\ssh.exe" -T git@github.com
+#   -> Hi Thalya4138! You've successfully authenticated, but GitHub does not provide shell access.
+
+# 让 git 用它推送（一次性）
+git -c core.sshCommand="C:/Windows/System32/OpenSSH/ssh.exe" push origin main
+```
+
+**已经把这个设置固化到本仓库**（不需要每次加 `-c`）：
+
+```bash
+git config core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
+git config --get core.sshCommand      # 复验
+```
+
+⚠️ 这是**仓库级**配置，不是全局。如果换机器或换仓库，需要重设。
+
+---
+
+#### 其他沙箱限制
+
 - **不要用 `tempfile.mkdtemp()`**：它建出来的目录会被沙箱 ACL 拒绝写入
   （实测 `PermissionError: [Errno 13]`，随后连 `os.listdir` 都 `WinError 5`）。
   用普通 `os.makedirs()` 建目录就正常。
@@ -244,6 +281,26 @@ python .\tmp\check_parallel.py          # 并行版，8 线程、25s/块超时�
 
 > 凡是没有当次工具输出对应的"发现"，一律不得写进正文，也不得当成结论汇报。
 > 各章章末的「诚实标注」表是例外——那里**本来就该写**"这条我没测"。
+
+### 12.3.1 新增判据：交叉引用要按「章内节号」核
+
+**已发现并修掉 5 处真实错误。** 典型形态是把**覆盖表条目号**当成了目标章的节号
+（例：`04_控制流.md 2.7 节` —— 04 章第 7 节才是条件表达式；`10_文件与IO.md 8.2 节` —— 那是第 2 节）。
+
+**为什么危险**：读者无法自行纠正——他会去 04 章找 2.7 节、只看到 2.5，
+然后怀疑自己找错了文件。这类错误比"没写"更伤信任。
+
+**检查脚本**（下一轮直接跑）：`tmp/check_xref3.py`
+
+- 识别三种写法：`XX.md 8.2 节` / 带反引号的 `的 8.2 节` / `第 08 章 8.3 节`
+- 做法：先抽取每个文件真实存在的标题号，再逐条验证引用是否命中
+- ⚠️ **早期版本的脚本要求文件名带反引号，会漏掉不带反引号的那种写法**
+  （该写法下漏检了 2 处）。用 `check_xref3.py`，不要用 `check_xref.py` / `check_xref2.py`
+- 脚本设了**跳过 `_HANDOFF.md`**（本文档为了举例会故意写出错误形态，不该被自己报出来）
+- 当前基线：**0 处真实错误**
+
+**规范已写进 `_写作规范.md` 第 10.1 条**：跨章引用必须写目标章的**实际节号 + 标题**，
+不要拿覆盖表条目号凑。
 
 ### 12.4 章节规模的实际分布（供下一轮参考）
 
