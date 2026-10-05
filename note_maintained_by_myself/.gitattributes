@@ -1,0 +1,15 @@
+# 只对本目录生效的换行约定。
+#
+# 为什么需要它（实测过的事实）：
+#   - 本机 git 全局 core.autocrlf = true
+#   - 但仓库里 60 个已跟踪文件中，59 个的 blob 里存的就是 CRLF
+#     （也就是说：这些文件是在 Windows 上带 CRLF 被提交进去的，autocrlf 没纠正它们）
+#   - 后果：任何"按行处理文本"的代码（正则假设 LF、字符串比较、diff 工具）
+#     在别的平台上会拿到 CRLF，出现"看起来一模一样但字符串不相等"这类问题
+#
+# 这里先只锁定 note_maintained_by_myself/，不碰仓库其他部分。
+# 如果以后要把整个仓库统一成 LF，做法是：
+#   1. 把下面两行移到仓库根目录的 .gitattributes
+#   2. 执行 git add --renormalize .
+#      （这会一次性重写仓库里所有文本文件，是一次很大的 commit，要先想清楚）
+* text=auto eol=lf
