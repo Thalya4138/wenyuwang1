@@ -1,0 +1,168 @@
+% !TEX program = xelatex
+% ============================================================
+%  学习笔记模板（LaTeX 版）
+%  用法：
+%   1) 用 XeLaTeX 编译（Overleaf 里在左上角 Menu -> Compiler 选 XeLaTeX）
+%   2) 每个 \section 都是一个「问题」，你只负责回答它
+%   3) \begin{quote}...\end{quote} 里是填写提示，写完删掉
+%   4) 中文文档必须用 XeLaTeX，不要用 pdfLaTeX
+% ============================================================
+
+\documentclass[UTF8, 11pt, a4paper]{ctexart}
+
+% ---------- 宏包 ----------
+\usepackage{amsmath, amssymb}          % 数学公式
+\usepackage{geometry}                  % 页面边距
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{booktabs}                  % 好看的三线表
+\usepackage{enumitem}                  % 自定义列表
+\usepackage{xcolor}                    % 颜色
+\usepackage{graphicx}                  % 插图
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+
+% ---------- 封面信息 ----------
+\title{学习笔记：这里写主题名}
+\author{你的名字}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ---------- 元信息表 ----------
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+日期 & 2025-01-01 \\
+来源 & 课程 / 书 / 视频（写清名字和链接） \\
+用时 & 30 分钟 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+\hrule
+\vspace{1em}
+
+% ============================================================
+\section{这段内容一句话讲什么？}
+
+\begin{quote}
+\itshape
+【填写提示】逼自己只用一句话。写不出来，说明还没懂。\\
+例：Markdown 是用几个符号代替鼠标点按钮的写字方式。
+\end{quote}
+
+（在这里写你的那一句话）
+
+
+% ============================================================
+\section{它讲了哪几件主要的事？}
+
+\begin{quote}
+\itshape
+【填写提示】只列骨架，不展开细节。3～5 条最合适。
+\end{quote}
+
+\begin{itemize}[leftmargin=*, itemsep=0.3em]
+  \item 第一件：
+  \item 第二件：
+  \item 第三件：
+\end{itemize}
+
+
+% ============================================================
+\section{每件事具体怎么说？}
+
+\begin{quote}
+\itshape
+【填写提示】用自己的话复述，别抄原文。抄了就等于没学。\\
+需要写公式时：行内公式用 $E = mc^2$ 这样写，独占一行用下面这样——\\
+\begin{verbatim}
+\[
+  \sum_{i=1}^{n} a_i = \frac{n(n+1)}{2}
+\]
+\end{verbatim}
+\end{quote}
+
+\subsection{第一件事：}
+
+\begin{itemize}[leftmargin=*, itemsep=0.3em]
+  \item 关键点：
+  \item 例子：
+  \item 容易搞错的地方：
+\end{itemize}
+
+\subsection{第二件事：}
+
+\begin{itemize}[leftmargin=*, itemsep=0.3em]
+  \item 关键点：
+  \item 例子：
+  \item 容易搞错的地方：
+\end{itemize}
+
+
+% ============================================================
+\section{我原来的想法错在哪？（最重要的一节）}
+
+\begin{quote}
+\itshape
+【填写提示】只写「我原以为……其实……」的对比。\\
+这一节决定你有没有真的学到东西。
+\end{quote}
+
+\begin{center}
+\begin{tabular}{p{0.28\textwidth} p{0.28\textwidth} p{0.32\textwidth}}
+\toprule
+\textbf{我原以为} & \textbf{实际上} & \textbf{差别在哪} \\
+\midrule
+                &                &              \\
+\addlinespace
+                &                &              \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+% ============================================================
+\section{还没懂 / 存疑的地方}
+
+\begin{quote}
+\itshape
+【填写提示】写下来，下次优先解决。留疑问不丢人。
+\end{quote}
+
+\begin{itemize}[leftmargin=*, label=$\square$, itemsep=0.3em]
+  \item 疑问一：
+  \item 疑问二：
+\end{itemize}
+
+
+% ============================================================
+\section{下一步做什么？}
+
+\begin{quote}
+\itshape
+【填写提示】必须是可以动手做的，不是「多复习」这种空话。
+\end{quote}
+
+\begin{enumerate}[label=(\arabic*), leftmargin=*, itemsep=0.3em]
+  \item 马上做：（今天就做，10 分钟内能开始）
+  \item 这周做：
+  \item 要查的资料：
+\end{enumerate}
+
+
+% ============================================================
+\section*{附录：原文摘录}
+
+\begin{quote}
+\itshape
+【填写提示】值得逐字记的原文放这里，记得标出处和页码 / 时间点。
+\end{quote}
+
+\begin{quote}
+「　　　」—— 出处，第 00:00 分钟
+\end{quote}
+
+\end{document}
