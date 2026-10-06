@@ -17,6 +17,13 @@ Desktop.ini
 *.swo
 *~
 
+# Obsidian：窗口布局、图谱、快捷键、第三方插件本体都不入库；
+# 但语义配色 snippet 及其启用状态是这套笔记系统的一部分（见 语义颜色使用规范.md），必须入库，
+# 否则换机器 clone 下来 <span class="note-red"> 会静默变成普通黑字。
+.obsidian/*
+!.obsidian/snippets/
+!.obsidian/appearance.json
+
 # Logs and temporary files
 *.log
 logs/
@@ -61,4 +68,9 @@ target/
 # 只会记一条 gitlink。没有 .gitmodules 就是「幽灵子模块」——
 # GitHub 上渲染成死链，git status 会因为找不到它的 gitdir 而报错。
 *.worktrees/
+
+# 课程仓库的本地克隆（2026-10-06 clone，来自 GMyhf/2026fall-cs101）。
+# 它自带 .git，若被 git add 会以 gitlink 形式记进这份索引仓库（同上「幽灵子模块」问题），
+# 而它真正的更新靠 `git pull upstream main`，不靠这里。操作说明见 2026fall-cs101-使用说明.md
+2026fall-cs101yan/
 
