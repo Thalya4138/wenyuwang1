@@ -1,0 +1,95 @@
+/* ============================================================
+   note-colors.css —— 语义化笔记配色（长期学习笔记用）
+   颜色固定成语义，不要随心情换：
+     黑 → 正文 / 普通解释
+     红 → 错误 / 坑 / 警告
+     蓝 → 定义 / 核心概念 / 公式
+     绿 → 正确答案 / 示例 / 已掌握
+   ============================================================ */
+
+/* ---------- 浅色模式 ---------- */
+.theme-light {
+    --note-black: #222222;
+    --note-red: #D64545;
+    --note-blue: #2F6FED;
+    --note-green: #2F8F5B;
+}
+
+/* ---------- 深色模式 ---------- */
+.theme-dark {
+    --note-black: #D6D6D6;
+    --note-red: #FF6B6B;
+    --note-blue: #6EA8FE;
+    --note-green: #6CCF9A;
+}
+
+/* ---------- 基础四色 ---------- */
+.note-black {
+    color: var(--note-black);
+}
+
+.note-red {
+    color: var(--note-red);
+}
+
+.note-blue {
+    color: var(--note-blue);
+}
+
+.note-green {
+    color: var(--note-green);
+}
+
+/* ---------- 加粗版本 ---------- */
+.note-black-bold {
+    color: var(--note-black);
+    font-weight: 700;
+}
+
+.note-red-bold {
+    color: var(--note-red);
+    font-weight: 700;
+}
+
+.note-blue-bold {
+    color: var(--note-blue);
+    font-weight: 700;
+}
+
+.note-green-bold {
+    color: var(--note-green);
+    font-weight: 700;
+}
+
+/* ============================================================
+   可选增强：只影响颜色，不改变排版，可与上面任意组合
+   ============================================================ */
+
+/* 高亮底色版本：<span class="note-blue note-bg">…</span> */
+.note-bg.note-black { background-color: rgba(34, 34, 34, 0.10); }
+.note-bg.note-red   { background-color: rgba(214, 69, 69, 0.14); }
+.note-bg.note-blue  { background-color: rgba(47, 111, 237, 0.14); }
+.note-bg.note-green { background-color: rgba(47, 143, 91, 0.14); }
+
+.theme-dark .note-bg.note-black { background-color: rgba(214, 214, 214, 0.14); }
+.theme-dark .note-bg.note-red   { background-color: rgba(255, 107, 107, 0.18); }
+.theme-dark .note-bg.note-blue  { background-color: rgba(110, 168, 254, 0.18); }
+.theme-dark .note-bg.note-green { background-color: rgba(108, 207, 154, 0.18); }
+
+/* 下划线版本：<span class="note-red note-underline">…</span> */
+.note-underline {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: currentColor;
+}
+
+/* 代码块 / 行内代码里的着色仍然生效（避免被主题代码色覆盖） */
+.markdown-rendered code .note-red,
+.markdown-rendered code .note-red-bold { color: var(--note-red); }
+.markdown-rendered code .note-green,
+.markdown-rendered code .note-green-bold { color: var(--note-green); }
+.markdown-rendered code .note-blue,
+.markdown-rendered code .note-blue-bold { color: var(--note-blue); }
+.markdown-rendered code .note-black,
+.markdown-rendered code .note-black-bold { color: var(--note-black); }
