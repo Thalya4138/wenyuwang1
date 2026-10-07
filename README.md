@@ -54,10 +54,19 @@ python cs_lecture/labs/lab05_retrieval_system.py
 
 一套**按覆盖表写、可验收**的 Python 知识点汇总，从环境配置讲到并发与网络，外加一份标准库索引。入口见 [`note_maintained_by_myself/README.md`](note_maintained_by_myself/README.md)。
 
-- **覆盖表** — [`00_知识点总览.md`](note_maintained_by_myself/00_知识点总览.md)：80 个条目，每条标注对应官方/runoob 章节、计划文件、展开程度与状态
-- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
-- **正文 13 章** — `01_入门与环境.md` ～ `12_并发与网络.md`，加 `99_标准库索引.md`
-- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
+- **覆盖表** — [`00_知识点总览.md`](note_maintained_by_myself/笔记本/00_知识点总览.md)：80 个条目，每条标注对应官方/runoob 章节、计划文件、展开程度与状态
+- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/笔记本/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
+- **正文 13 章** — `笔记本/01_入门与环境.md` ～ `12_并发与网络.md`，加 `99_标准库索引.md`
+- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/笔记本/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
+
+四份规范文件分工不同，别混着看：
+
+| 规矩 | 管什么 | 位置 |
+|---|---|---|
+| 写作规范 | **这份笔记自己怎么验收**：自己话写、实跑、对账、诚实标注 | [`_写作规范.md`](note_maintained_by_myself/笔记本/_写作规范.md) |
+| 整理规范 | **知识本身怎么分层组织**：同级标题同一分类轴、共性/差异/入口/机制分层、章末知识结构回收 | [`笔记与讲义整理规范.md`](笔记与讲义整理规范.md) |
+| 颜色语义 | 行文中的颜色含义（黑=正文 / 红=坑 / 蓝=定义 / 绿=例子） | [`语义颜色使用规范.md`](语义颜色使用规范.md) |
+| 工作区指令 | 给 AI 的入口：整理学习材料前先读上面第一、二份 | [`AGENTS.md`](AGENTS.md) |
 
 三条边界写在这里，是为了不让人误以为它什么都包：
 

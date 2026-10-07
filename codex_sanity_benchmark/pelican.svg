@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800"
+     role="img" aria-label="A pelican riding a bicycle">
+  <title>A pelican riding a bicycle</title>
+
+  <defs>
+    <style>
+      .wheel-tire { fill: none; stroke: #2A3A4E; stroke-width: 11; }
+      .wheel-rim  { fill: #E4E9F2; stroke: #2A3A4E; stroke-width: 6; }
+      .spokes     { fill: none; stroke: #8A97AC; stroke-width: 3; stroke-linecap: round; }
+      .hub        { fill: #E4E9F2; stroke: #2A3A4E; stroke-width: 4; }
+      .frame      { fill: none; stroke: #2A3A4E; stroke-width: 13; stroke-linecap: round; stroke-linejoin: round; }
+      .chain      { fill: none; stroke: #2A3A4E; stroke-width: 4; stroke-linecap: round; }
+      .crank      { fill: none; stroke: #2A3A4E; stroke-width: 11; stroke-linecap: round; }
+      .leg-far    { fill: none; stroke: #C97C33; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+      .leg-near   { fill: none; stroke: #F2A24B; stroke-width: 18; stroke-linecap: round; stroke-linejoin: round; }
+      .pelican    { fill: #FBF6EA; stroke: #2A3A4E; stroke-width: 6; stroke-linejoin: round; }
+      .wing       { fill: #E2E8F2; stroke: #2A3A4E; stroke-width: 6; stroke-linejoin: round; }
+      .wing-far   { fill: #D3DAE7; stroke: #2A3A4E; stroke-width: 6; stroke-linejoin: round; }
+      .beak       { fill: #F2A24B; stroke: #2A3A4E; stroke-width: 6; stroke-linejoin: round; }
+      .pouch      { fill: #F8C57E; stroke: #2A3A4E; stroke-width: 5; stroke-linejoin: round; }
+      .foot       { fill: #F2A24B; stroke: #2A3A4E; stroke-width: 5; stroke-linejoin: round; }
+      .pedal      { fill: #2A3A4E; }
+      .feather    { fill: none; stroke: #AEB9CB; stroke-width: 5; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <!-- ============ background ============ -->
+  <rect x="0" y="0" width="1200" height="800" fill="#EAF1F6"/>
+  <circle cx="1052" cy="140" r="72" fill="#F7D774"/>
+  <path d="M0 690 Q 300 664 620 682 Q 900 698 1200 676 L1200 800 L0 800 Z" fill="#CFE0D8"/>
+  <path d="M0 690 Q 300 664 620 682 Q 900 698 1200 676" fill="none" stroke="#9DBBAE" stroke-width="6" stroke-linecap="round"/>
+  <line x1="40" y1="772" x2="1160" y2="772" stroke="#9DBBAE" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="600" cy="778" rx="430" ry="14" fill="#9DBBAE" opacity="0.5"/>
+
+  <!-- ============ rear wheel (hub 300,650) ============ -->
+  <g>
+    <line class="spokes" x1="300" y1="540" x2="300" y2="760"/>
+    <line class="spokes" x1="190" y1="650" x2="410" y2="650"/>
+    <line class="spokes" x1="222" y1="572" x2="378" y2="728"/>
+    <line class="spokes" x1="378" y1="572" x2="222" y2="728"/>
+    <line class="spokes" x1="300" y1="568" x2="222" y2="728"/>
+    <line class="spokes" x1="300" y1="568" x2="378" y2="728"/>
+    <line class="spokes" x1="300" y1="732" x2="222" y2="572"/>
+    <line class="spokes" x1="300" y1="732" x2="378" y2="572"/>
+    <line class="spokes" x1="211" y1="650" x2="378" y2="728"/>
+    <line class="spokes" x1="389" y1="650" x2="222" y2="728"/>
+    <line class="spokes" x1="211" y1="650" x2="378" y2="572"/>
+    <line class="spokes" x1="389" y1="650" x2="222" y2="572"/>
+    <circle class="wheel-rim" cx="300" cy="650" r="104"/>
+    <circle class="wheel-tire" cx="300" cy="650" r="110"/>
+    <circle class="hub" cx="300" cy="650" r="12"/>
+  </g>
+
+  <!-- ============ front wheel (hub 900,650) ============ -->
+  <g>
+    <line class="spokes" x1="900" y1="540" x2="900" y2="760"/>
+    <line class="spokes" x1="790" y1="650" x2="1010" y2="650"/>
+    <line class="spokes" x1="822" y1="572" x2="978" y2="728"/>
+    <line class="spokes" x1="978" y1="572" x2="822" y2="728"/>
+    <line class="spokes" x1="900" y1="568" x2="822" y2="728"/>
+    <line class="spokes" x1="900" y1="568" x2="978" y2="728"/>
+    <line class="spokes" x1="900" y1="732" x2="822" y2="572"/>
+    <line class="spokes" x1="900" y1="732" x2="978" y2="572"/>
+    <line class="spokes" x1="811" y1="650" x2="978" y2="728"/>
+    <line class="spokes" x1="989" y1="650" x2="822" y2="728"/>
+    <line class="spokes" x1="811" y1="650" x2="978" y2="572"/>
+    <line class="spokes" x1="989" y1="650" x2="822" y2="572"/>
+    <circle class="wheel-rim" cx="900" cy="650" r="104"/>
+    <circle class="wheel-tire" cx="900" cy="650" r="110"/>
+    <circle class="hub" cx="900" cy="650" r="12"/>
+  </g>
+
+  <!-- ============ chain ============ -->
+  <path class="chain" d="M300 638 L570 590"/>
+  <path class="chain" d="M300 662 L570 650"/>
+
+  <!-- ============ bicycle frame (main triangle) ============ -->
+  <g class="frame">
+    <!-- seat stays, chain stay, seat tube -->
+    <path d="M500 430 L300 650"/>
+    <path d="M570 620 L300 650"/>
+    <path d="M500 430 L570 620"/>
+    <!-- down tube -->
+    <path d="M570 620 L846 466"/>
+    <!-- top tube -->
+    <path d="M502 426 L836 434"/>
+    <!-- head tube -->
+    <path d="M836 434 L858 552"/>
+    <!-- fork to front hub -->
+    <path d="M858 552 L900 650"/>
+    <!-- seat post -->
+    <path d="M500 430 L496 412"/>
+  </g>
+
+  <!-- chainring + crank centre (bottom bracket, lower middle of frame) -->
+  <circle cx="570" cy="620" r="30" fill="#E4E9F2" stroke="#2A3A4E" stroke-width="5"/>
+  <circle cx="570" cy="620" r="9" fill="#2A3A4E"/>
+
+  <!-- ============ saddle ============ -->
+  <path d="M446 420 Q 500 400 558 420 Q 504 444 446 420 Z" fill="#2A3A4E"/>
+
+  <!-- ============ handlebar ============ -->
+  <g class="frame">
+    <path d="M836 440 L830 372"/>
+    <path d="M798 368 Q 828 356 858 368 Q 884 378 890 398"/>
+  </g>
+
+  <!-- ============ far leg + far pedal (behind the frame) ============ -->
+  <path class="leg-far" d="M440 412 C 424 470 466 522 528 566"/>
+  <path class="foot" d="M508 562 L548 562 L556 584 Q 526 592 502 582 Z"/>
+  <circle class="pedal" cx="528" cy="572" r="11"/>
+  <path class="crank" d="M570 620 L528 572"/>
+
+  <!-- ============ tail ============ -->
+  <path class="pelican" d="M478 272 C 418 250 358 296 322 356 C 362 348 396 366 428 388 C 408 342 444 304 478 272 Z"/>
+
+  <!-- ============ far wing (raised, behind the body) ============ -->
+  <path class="wing-far" d="M528 228 C 596 236 642 282 652 344 C 604 318 552 340 520 376 C 502 330 502 264 528 228 Z"/>
+  <path class="feather" d="M556 268 C 586 288 610 312 626 340" opacity="0.75"/>
+  <path class="feather" d="M540 300 C 566 320 588 344 602 366" opacity="0.6"/>
+
+  <!-- ============ body ============ -->
+  <path class="pelican" d="M470 324 C 424 244 540 204 628 252 C 676 278 698 328 668 358 C 632 400 496 402 470 324 Z"/>
+
+  <!-- ============ neck (thick, joins body to head) ============ -->
+  <path class="pelican" d="M556 324 C 562 254 606 152 680 102 C 688 104 694 110 700 118 C 634 178 612 272 618 350 C 594 356 570 346 556 324 Z"/>
+
+  <!-- ============ beak: long tapered upper mandible ============ -->
+  <path class="beak" d="M770 130 C 850 128 936 148 1006 182 C 1018 188 1018 202 1004 202 C 914 192 828 184 764 176 Z"/>
+
+  <!-- ============ gular pouch: hangs from the beak base to the tip ============ -->
+  <path class="pouch" d="M770 180 C 780 226 812 262 862 284 C 908 306 958 306 1000 288 C 1012 282 1020 288 1014 298 C 986 336 920 352 862 344 C 798 334 768 272 762 206 C 760 188 766 174 770 180 Z"/>
+
+  <!-- ============ head ============ -->
+  <circle class="pelican" cx="742" cy="140" r="58"/>
+
+  <!-- ============ eye ============ -->
+  <circle cx="764" cy="126" r="14" fill="#FFFFFF" stroke="#2A3A4E" stroke-width="5"/>
+  <circle cx="768" cy="128" r="6.5" fill="#2A3A4E"/>
+
+  <!-- ============ near wing reaching the handlebar grip ============ -->
+  <path class="wing" d="M574 252 C 660 256 772 292 866 340 C 898 358 906 382 894 400 C 872 400 848 390 828 378 C 762 344 690 330 618 344 C 590 322 568 282 574 252 Z"/>
+  <path class="feather" d="M626 286 C 692 302 764 328 832 362" opacity="0.7"/>
+  <path class="feather" d="M614 310 C 680 328 748 350 818 384" opacity="0.55"/>
+
+  <!-- ============ near leg + near pedal (in front of the frame, on the near side) ============ -->
+  <!-- thigh leaves the front of the body, knee bends above the down tube, shin drops to the near pedal -->
+  <path class="leg-near" d="M534 434 C 566 474 594 530 604 596 C 606 618 610 634 612 664"/>
+  <!-- crank arm first, then hoof/pedal on top so the foot rests on the pedal -->
+  <path class="crank" d="M570 620 L612 668"/>
+  <path class="foot" d="M590 632 C 606 674 626 690 656 680 C 654 660 640 646 618 644 Z"/>
+  <circle class="pedal" cx="612" cy="668" r="12"/>
+
+  <!-- wing tip gripping the handlebar end (drawn last so contact is explicit) -->
+  <circle cx="874" cy="378" r="15" fill="#E2E8F2" stroke="#2A3A4E" stroke-width="6"/>
+  <circle cx="874" cy="378" r="6" fill="#2A3A4E"/>
+</svg>
