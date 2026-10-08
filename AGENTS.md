@@ -14,7 +14,9 @@
 
 同一任务还要叠加笔记目录自己的维护规矩：
 
+- **[`note_maintained_by_myself/_AI维护须知.md`](note_maintained_by_myself/_AI维护须知.md)** —— 若你要**动手维护那套笔记**（改章节、补知识点、跑验收），先读这份执行手册：红线、验证命令与真实基线、已知陷阱、汇报格式都在里面
 - [`note_maintained_by_myself/笔记本/_写作规范.md`](note_maintained_by_myself/笔记本/_写作规范.md)（自己话写、代码块必须实跑贴真实输出、章首目录与章末对账表、诚实标注）
+- [`note_maintained_by_myself/_HANDOFF.md`](note_maintained_by_myself/_HANDOFF.md)（这台机器的事实、历次踩坑、沙箱限制）
 - 行文中的颜色语义（黑=正文 / 红=坑 / 蓝=定义 / 绿=例子）见 [`语义颜色使用规范.md`](语义颜色使用规范.md)
 
 ### 最小可执行版（只记住这些也必须成立）
