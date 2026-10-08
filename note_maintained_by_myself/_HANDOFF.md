@@ -150,7 +150,7 @@ C:\Users\Wang\Desktop\git\note_maintained_by_myself\00_知识点总览.md
   - **AI 的 `web_fetch` 工具 → ✅ 能取到，HTTP 200，正文完整**
 - 所以「官方文档取不到」**只对"你自己敲 curl"成立，对"让 AI 去取"不成立**。
 - 这一条已经把 `00_知识点总览.md` 第五节那段"还没做的事"变成了**已完成**：
-  见 [`01a_三源交叉核对.md`](笔记本/01a_三源交叉核对.md)（抓了官方 Tutorial / Language Reference /
+  见 [`01a_三源交叉核对.md`](Python笔记本/01a_三源交叉核对.md)（抓了官方 Tutorial / Language Reference /
   Module Index / Built-in Functions 四份目录，Python 3.14.8）。
 - **另一条附带结论**：官方文档是 **PSF-2.0 许可**（示例部分 0BSD），
   比用 CC-BY-SA 的中文材料干净得多——**允许商用、修改、闭源**。

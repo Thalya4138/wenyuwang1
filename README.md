@@ -50,24 +50,42 @@ python cs_lecture/labs/lab05_retrieval_system.py
 
 只依赖 Python 标准库（`lab03` 除外，需要 `numpy`，见 [`cs_lecture/requirements.txt`](cs_lecture/requirements.txt)）。讲义中的 PyTorch 示范未在本机实跑，原文已明确标注。
 
-## `note_maintained_by_myself/` — Python 知识点笔记
+## `note_maintained_by_myself/` — 我自己维护的知识点笔记
 
-一套**按覆盖表写、可验收**的 Python 知识点汇总，从环境配置讲到并发与网络，外加一份标准库索引。入口见 [`note_maintained_by_myself/README.md`](note_maintained_by_myself/README.md)。
+这个目录下是**两套独立、各自可验收**的笔记。入口见 [`note_maintained_by_myself/README.md`](note_maintained_by_myself/README.md)。
 
-- **覆盖表** — [`00_知识点总览.md`](note_maintained_by_myself/笔记本/00_知识点总览.md)：80 个条目，每条标注对应官方/runoob 章节、计划文件、展开程度与状态
-- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/笔记本/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
-- **正文 13 章** — `笔记本/01_入门与环境.md` ～ `12_并发与网络.md`，加 `99_标准库索引.md`
-- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/笔记本/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
+### Python 知识点笔记
+
+一套**按覆盖表写、可验收**的 Python 知识点汇总，从环境配置讲到并发与网络，外加一份标准库索引。
+
+- **覆盖表** — [`00_知识点总览.md`](note_maintained_by_myself/Python笔记本/00_知识点总览.md)：80 个条目，每条标注对应官方/runoob 章节、计划文件、展开程度与状态
+- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/Python笔记本/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
+- **正文 13 章** — [`Python笔记本/01_入门与环境.md`](note_maintained_by_myself/Python笔记本/01_入门与环境.md) ～ `12_并发与网络.md`，加 `99_标准库索引.md`
+- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/Python笔记本/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
 - **课堂主题随笔** — [`进制转换与信息编码、存储`](note_maintained_by_myself/随笔维护的笔记本/进制转换.md)：整合 Theory 2 的数制、位运算、数值与字符编码、声音／图像／视频数据量，附执行表、教学图与课件页码对照。
+
+### C++ 入门讲义（进行中）
+
+规格与上面那套对齐，但验证方式完全不同：**靠真正的编译器**（MSVC），不是解释器。基线 **C++17**。
+
+- **覆盖表** — [`C++笔记本/00_知识点总览.md`](note_maintained_by_myself/C++笔记本/00_知识点总览.md)：14 章骨架，按「工具链→类型→表达式→控制流→函数→内存→类→错误→库→模板→资源→进阶」这条**认知依赖链**排章
+- **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/C++笔记本/01a_三源交叉核对.md)：用 C++ 工作草案 / cppreference / Core Guidelines 核对，并**纠正了一处**把 C++11 基线误当 C++17 新特性的分类错误
+- **正文** — 目前只有 [`01_从源代码到运行.md`](note_maintained_by_myself/C++笔记本/01_从源代码到运行.md)：从源文件到可执行文件的完整链条、编译开关、诊断怎么读、Windows 特有的坑
+- **多 agent 协作规范** — [`_协作规范.md`](note_maintained_by_myself/C++笔记本/_协作规范.md)：Codex 在沙箱外写、本会话编译验收的文件交接协议
+- **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/C++笔记本/_写作规范.md) 与 [`_维护须知.md`](note_maintained_by_myself/C++笔记本/_维护须知.md)
+
+> ⚠️ **两套笔记的执行手册不可互相套用**：C++ 侧要先跑 `vcvars64.bat`、
+> 编译必须加 `/utf-8`（否则含中文的源文件直接编译失败），验证靠编译运行而非解释执行。
 
 五份规范文件分工不同，别混着看：
 
 | 规矩 | 管什么 | 位置 |
 |---|---|---|
-| 写作规范 | **这份笔记自己怎么验收**：自己话写、实跑、对账、诚实标注 | [`_写作规范.md`](note_maintained_by_myself/笔记本/_写作规范.md) |
 | 整理规范 | **知识本身怎么分层组织**：同级标题同一分类轴、共性/差异/入口/机制分层、章末知识结构回收 | [`笔记与讲义整理规范.md`](笔记与讲义整理规范.md) |
+| 写作规范（Python） | **Python 笔记自己怎么验收**：自己话写、实跑、对账、诚实标注 | [`Python笔记本/_写作规范.md`](note_maintained_by_myself/Python笔记本/_写作规范.md) |
+| 写作规范（C++） | **C++ 讲义自己怎么验收**：代码块标记约定、锚点机检、`◐`/`☑` 口径 | [`C++笔记本/_写作规范.md`](note_maintained_by_myself/C++笔记本/_写作规范.md) |
 | 颜色语义 | 行文中的颜色含义（黑=正文 / 红=坑 / 蓝=定义 / 绿=例子） | [`语义颜色使用规范.md`](语义颜色使用规范.md) |
-| AI 维护须知 | **一个 agent 具体怎么干活**：红线、验证命令与真实基线、已知陷阱、汇报格式 | [`_AI维护须知.md`](note_maintained_by_myself/_AI维护须知.md) |
+| AI 维护须知 | **一个 agent 具体怎么干活**：红线、验证命令与真实基线、已知陷阱、汇报格式 | Python 侧 [`_AI维护须知.md`](note_maintained_by_myself/_AI维护须知.md)；C++ 侧 [`_维护须知.md`](note_maintained_by_myself/C++笔记本/_维护须知.md) |
 | 工作区指令 | 给 AI 的入口：整理学习材料前先读第一、二份 | [`AGENTS.md`](AGENTS.md) |
 
 三条边界写在这里，是为了不让人误以为它什么都包：

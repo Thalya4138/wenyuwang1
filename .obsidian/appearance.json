@@ -2,5 +2,6 @@
   "theme": "obsidian",
   "enabledCssSnippets": [
     "note-colors"
-  ]
+  ],
+  "accentColor": "#b870ff"
 }

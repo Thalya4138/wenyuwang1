@@ -32,6 +32,13 @@ temp/
 *.tmp
 *.bak
 
+# 笔记目录下的 tmp/ —— 已真实踩过一次：
+# Codex 与子 agent 各自在 `note_maintained_by_myself/C++笔记本/` 下自建过 tmp/，
+# 把编译产物、探针脚本、甚至评审报告都丢在里面（违反《C++笔记本/_协作规范.md》5.2 条）。
+# 后果不只是"乱"：那个目录里的文件会被链接检查当成正文扫到，产生假阳性，
+# 而**假阳性会训练人忽略警告**。所以从根上忽略掉。
+note_maintained_by_myself/**/tmp/
+
 # JavaScript / TypeScript
 node_modules/
 .npm/
