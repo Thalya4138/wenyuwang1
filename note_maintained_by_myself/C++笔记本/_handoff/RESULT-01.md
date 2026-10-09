@@ -17,7 +17,7 @@ $env:PYTHONUTF8='1'
 & C:\Users\Wang\anaconda3\python.exe -u tmp\ch01_round2_probe.py
 ```
 
-这是 B 新写的采集器，未运行 A 的 `probe_ch01.py`。源文件、逐项 `.bat`、原始日志和 `results.json` 保留在 [`../tmp/ch01-round2/`](../tmp/ch01-round2/)。复现源码由 [`../tmp/ch01_round2_probe.py`](../tmp/ch01_round2_probe.py) 生成。临时目录在本轮可写工作区内，已经用 `git check-ignore` 确认忽略。
+这是 B 新写的采集器，未运行 A 的 `probe_ch01.py`。源文件、逐项 `.bat`、原始日志和 `results.json` 保留在 `C++笔记本/tmp/ch01-round2/`。**（注：该目录已按 `_协作规范.md` 5.2 条清理，原始产物不再随仓库保留；结论与关键输出已摘录在本报告中。）**复现源码由 `C++笔记本/tmp/ch01_round2_probe.py` 生成。临时目录在本轮可写工作区内，已经用 `git check-ignore` 确认忽略。
 
 每个批处理先执行以下公共前缀，再执行表内命令；源码均为 UTF-8：
 
@@ -106,7 +106,7 @@ raw_bad.cpp(1): fatal error C1075: “{”: 未找到匹配令牌
 
 **目标文件格式实验**：`dumpbin /nologo /headers od.obj` 输出 `File Type: COFF OBJECT`，即使没开调试信息开关也存在 `.debug$S`（大小 `A8`）；不能仅凭节名推断存在完整源码调试信息。加 `/Z7` 编译为 `z7.obj` 后，头部输出 `.debug$S` 大小 `248`、`.debug$T` 大小 `47C`；它们是十六进制值。`/Z7` 命令没有 `/Zi`。[MSVC 文档](https://learn.microsoft.com/en-us/cpp/build/reference/z7-zi-zi-debug-information-format?view=msvc-170)明确区分对象内调试信息与单独 PDB，故正文“`/Zi` 时才有”不成立。
 
-**Shell 对照**：在实验目录执行 `argv.exe abc`，PowerShell 报 `CommandNotFoundException`；`& .\argv.exe abc` 正常输出上述两行；`cmd.exe /d /c 'argv.exe abc'` 也正常输出上述两行。记录见 [`../tmp/ch01_shell_probe.txt`](../tmp/ch01_shell_probe.txt)。这是两种 shell 的查找规则差异，不是 C++ 语言规则，也不是 PowerShell 的脚本执行策略开关。[PowerShell 官方说明](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.5)。
+**Shell 对照**：在实验目录执行 `argv.exe abc`，PowerShell 报 `CommandNotFoundException`；`& .\argv.exe abc` 正常输出上述两行；`cmd.exe /d /c 'argv.exe abc'` 也正常输出上述两行。记录见 `C++笔记本/tmp/ch01_shell_probe.txt`**（该临时文件已清理）**。这是两种 shell 的查找规则差异，不是 C++ 语言规则，也不是 PowerShell 的脚本执行策略开关。[PowerShell 官方说明](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.5)。
 
 ## B. 依赖实现 / 未指定 / UB 的说法（A 未标的）
 
@@ -232,7 +232,7 @@ $env:PYTHONUTF8='1'
 合计 8 块 ｜ 输出一致 8 ｜ 预期编译失败 0 ｜ 无预期输出 0 ｜ 不符合预期 0
 ```
 
-8 块均编译成功并输出一致；**3 条警告**：`ch01_unused_warn` 的 `C4189` 1 条，`ch01_main_args_shape` 的 `C4100` 2 条。保留的编译日志在 `../tmp/cppverify-work/`，验证汇总在 [`../tmp/ch01_verify_round2.txt`](../tmp/ch01_verify_round2.txt)。没有给 UB、多文件、函数片段或路径输出块伪造确定结果。
+8 块均编译成功并输出一致；**3 条警告**：`ch01_unused_warn` 的 `C4189` 1 条，`ch01_main_args_shape` 的 `C4100` 2 条。保留的编译日志在 `C++笔记本/tmp/cppverify-work/`**（已清理）**，验证汇总在 `C++笔记本/tmp/ch01_verify_round2.txt`**（该临时文件已清理）**。没有给 UB、多文件、函数片段或路径输出块伪造确定结果。
 
 结构命令 `& C:\Users\Wang\anaconda3\python.exe tmp\ch01_audit.py`：**16 个二级标题、16 条目录标签与还原锚点全部逐字匹配**。REVIEW 的“15 条（0–15）”计数有误：从 0 到 15 是 16 项。正文共 **26 个 cpp 围栏块**，其中 8 个是本轮可独立运行且确定输出的标记块；其余不纳入这一基线。
 
