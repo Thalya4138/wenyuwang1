@@ -10,45 +10,20 @@
 
 | 目录 | 内容 | 规模 |
 |---|---|---|
-| [`cs_lecture/`](cs_lecture/) | 整合讲义（56 章）+ 5 个配套实验 | 19 个文件 |
 | [`note_maintained_by_myself/`](note_maintained_by_myself/) | Python 知识点笔记（按覆盖表写、可验收） | 16 个文件 |
 | [`Practice/`](Practice/) | Python / OJ 练习程序 | 21 个文件 |
 | [`Resources from class/`](<Resources from class/>) | 课堂讲义原件（Jupyter notebook 与 `.py`） | 12 个文件 |
 
-## `cs_lecture/` — 整合讲义
+## `cs_lecture/` — 已移除
 
-版本 2026-09-26，从第 0 章编号至第 55 章，共 56 章。主线是「先建立能解释的程序，再理解算法、系统资源、学习与行动」。
+整合讲义（56 章 + 5 个配套实验）已于 2026-10-08 移除，见提交 `121cf58`「重构笔记目录，接入 C++ 笔记工程」。
 
-- **[合并版单文件](cs_lecture/CS_Lecture_Complete.md)** — 适合通读或全文检索
-- **分卷阅读** — 按主题拆分，见下表
-
-| 分卷 | 章节 | 主题 |
-|---|---|---|
-| [基础与 Python](cs_lecture/chapters/00_foundations.md) | 0—17 | 环境、语法、对象、可靠编程 |
-| [算法与数据结构](cs_lecture/chapters/01_algorithms.md) | 18—32 | 建模、证明、结构、搜索与优化 |
-| [计算机系统](cs_lecture/chapters/02_systems.md) | 33—38 | 表示、执行、内存、操作系统、网络、数据库与理论 |
-| [数学与数值计算](cs_lecture/chapters/03_mathematics.md) | 39—43 | 离散、线代、优化、概率与数组 |
-| [机器学习与深度学习](cs_lecture/chapters/04_learning.md) | 44—49 | 目标、评价、模型、梯度、视觉、序列与生成 |
-| [语言、智能体与机器人](cs_lecture/chapters/05_frontiers.md) | 50—55 | 大模型、工具、强化学习、世界模型与控制 |
-| [练习与解释](cs_lecture/chapters/06_exercises.md) | — | 16 道针对机制与反例的练习，附实验入口 |
-| [课程、论文和代码](cs_lecture/chapters/07_resources.md) | — | 学习阶段、前置知识与获取途径 |
-| [资料映射与校正](cs_lecture/chapters/08_source_map.md) | — | 原资料对应章节、版本区别与处理边界 |
-| [英文术语速查](cs_lecture/chapters/09_glossary.md) | — | 分卷跳读时补查 |
-| [验证记录](cs_lecture/chapters/10_validation.md) | — | 实际运行结果与未验证部分 |
-
-讲义自身的说明见 [`cs_lecture/README.md`](cs_lecture/README.md)。
-
-### 配套实验
+内容仍在 git 历史里，可以取回：
 
 ```bash
-python cs_lecture/labs/lab01_foundations.py
-python cs_lecture/labs/lab02_algorithms.py
-python cs_lecture/labs/lab03_learning.py      # 唯一需要 NumPy
-python cs_lecture/labs/lab04_decision_control.py
-python cs_lecture/labs/lab05_retrieval_system.py
+git show 121cf58^:cs_lecture/CS_Lecture_Complete.md          # 合并版单文件
+git checkout 121cf58^ -- cs_lecture/                          # 整个目录
 ```
-
-只依赖 Python 标准库（`lab03` 除外，需要 `numpy`，见 [`cs_lecture/requirements.txt`](cs_lecture/requirements.txt)）。讲义中的 PyTorch 示范未在本机实跑，原文已明确标注。
 
 ## `note_maintained_by_myself/` — 我自己维护的知识点笔记
 
@@ -62,7 +37,7 @@ python cs_lecture/labs/lab05_retrieval_system.py
 - **三源交叉核对** — [`01a_三源交叉核对.md`](note_maintained_by_myself/Python笔记本/01a_三源交叉核对.md)：用官方 Tutorial / Language Reference / Module Index 三份目录逐条核对，列出仍缺的条目
 - **正文 13 章** — [`Python笔记本/01_入门与环境.md`](note_maintained_by_myself/Python笔记本/01_入门与环境.md) ～ `12_并发与网络.md`，加 `99_标准库索引.md`
 - **维护规矩** — [`_写作规范.md`](note_maintained_by_myself/Python笔记本/_写作规范.md)：每个代码块必须实跑并贴真实输出，章末必须有覆盖对账表与「诚实标注」
-- **课堂主题随笔** — [`进制转换与信息编码、存储`](note_maintained_by_myself/随笔维护的笔记本/进制转换.md)：整合 Theory 2 的数制、位运算、数值与字符编码、声音／图像／视频数据量，附执行表、教学图与课件页码对照。
+- **课堂主题随笔** — [`进制转换与信息编码、存储`](note_maintained_by_myself/随笔维护的笔记本/进制转换与信息编码、存储.md)：整合 Theory 2 的数制、位运算、数值与字符编码、声音／图像／视频数据量，附执行表、教学图与课件页码对照。
 
 ### C++ 入门讲义（进行中）
 
@@ -132,7 +107,7 @@ uv run ruff check .              # 代码风格检查
 | 运行时依赖 | `ipykernel`、`numpy` |
 | 开发依赖 | `ruff` |
 
-讲义正文以 Python 3.11 以上为基线；`cs_lecture/` 也可脱离 uv 单独运行，只需自备 `numpy`。
+讲义正文以 Python 3.11 以上为基线。
 
 ## 仓库约定
 
