@@ -12,7 +12,7 @@
 |---|---|---|
 | [`note_maintained_by_myself/`](note_maintained_by_myself/) | Python 知识点笔记（按覆盖表写、可验收） | 16 个文件 |
 | [`Practice/`](Practice/) | Python / OJ 练习程序 | 21 个文件 |
-| [`Resources from class/`](<Resources from class/>) | 课堂讲义原件（Jupyter notebook 与 `.py`） | 12 个文件 |
+| [`Resources from class/`](<Resources from class/>) | 课堂讲义原件（Jupyter notebook 与 `.py`），按课次加前缀 | 15 个文件 |
 
 ## `cs_lecture/` — 已移除
 
@@ -84,12 +84,37 @@ git checkout 121cf58^ -- cs_lecture/                          # 整个目录
 
 ## `Resources from class/` — 课堂原件
 
-课堂分发的原始材料，保留原名与编号顺序，未做重写。
+课堂分发的原始材料，内容未做重写。
 
-- **Jupyter notebook（6 个）** — 类型和算术表达式、内置函数和数学函数、关键字和变量的赋值、字符串、表（初步）、turtle star
-- **Python 脚本（6 个）** — 逻辑判断和 if 语句、循环语句、自定义函数、其它机制、Python 入门实战程序、`6-input.py`
+文件名统一加 `第N课-` 前缀，让排序按课次而不是按原编号走（原来第二周的 `1-` 与第三周的 `1-` 会混在一起）。
+`第N课` 对应课件里的「第 N 周」。
+
+**第二课**（Jupyter notebook 5 个 + 脚本 1 个）
+
+- `第二课-1-类型和算术表达式.ipynb`
+- `第二课-2-内置函数和数学函数.ipynb`
+- `第二课-3-关键字和变量的赋值.ipynb`
+- `第二课-4-字符串.ipynb`
+- `第二课-5-表 (初步).ipynb`
+- `第二课-6-input.py`
+
+**第三课**
+
+- `第三课-1-逻辑判断和 if 语句.py`
+- `第三课-2-循环语句.py`
+- `第三课-3-自定义函数.py`
+- `第三课-4-其它机制.py`
+- `第三课-5-turtle star.ipynb`
+
+**第四课**（不在课件「本讲内容」清单里，按来源归在此）
+
+- `第四课-1-coding-1.py`
+- `第四课-2-coding-2.py`
+- `第四课-2.3-Python入门实战程序.py`
+- `第四课-3-cbrt.py`
 
 notebook 中保留了执行输出，便于对照课堂结果。
+第一周的课件是 PDF，不在本目录（仅在 WPS 云盘）。
 
 ## 环境与依赖
 
